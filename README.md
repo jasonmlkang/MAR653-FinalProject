@@ -16,5 +16,3 @@ Airbnb listings in New York City
 
 # Purpose
 This repository will be used for team collaboration and consolidation on analysis/deliverables.
-
-# Test!
