@@ -24,4 +24,3 @@ neighbourhoods.geojson 	GeoJSON file of neighbourhoods of the city.
 
 # Purpose
 This repository will be used for team collaboration and consolidation on analysis/deliverables.
-
