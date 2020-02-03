@@ -15,11 +15,11 @@ https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data#AB_NYC_2019.csv
 Airbnb listings in New York City
 This public dataset is part of Airbnb, and the original source can be found on http://insideairbnb.com/get-the-data.html
 
-- listings.csv.gz (Detailed Listings data for New York City)
-- calendar.csv.gz (Detailed Calendar Data for listings in New York City)
-- reviews.csv.gz (Detailed Review Data for listings in New York City)
-- listings.csv (Summary information and metrics for listings in New York City (good for visualisations))
-- reviews.csv (Summary Review data and Listing ID (to facilitate time based analytics and visualisations linked to a listing))
+- listings.csv.gz (Detailed Listings data for New York City) Date compiled: 04 December, 2019
+- calendar.csv.gz (Detailed Calendar Data for listings in New York City) Date compiled: 04 December, 2019
+- reviews.csv.gz (Detailed Review Data for listings in New York City) Date compiled: 04 December, 2019
+- listings.csv (Summary information and metrics for listings in New York City (good for visualisations)) Date compiled: 04 December, 2019
+- reviews.csv (Summary Review data and Listing ID (to facilitate time based analytics and visualisations linked to a listing)) Date compiled: 04 December, 2019
 - neighbourhoods.csv (Neighbourhood list for geo filter. Sourced from city or open source GIS files)
 - neighbourhoods.geojson (GeoJSON file of neighbourhoods of the city)
 
