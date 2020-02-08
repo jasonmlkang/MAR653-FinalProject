@@ -11791,7 +11791,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[200]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
@@ -11805,8 +11805,7 @@ div#notebook {
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of Variables: </span><span class="si">{:d}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of Observations: </span><span class="si">{:d}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data types:&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
-    <span class="n">g</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span>    
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>    
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Column Names by Type:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">g</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span><span class="o">.</span><span class="n">groups</span>
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
@@ -11828,7 +11827,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[201]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Data directory</span>
@@ -11885,7 +11884,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[202]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">listings_detailed</span><span class="se">\\</span><span class="s1">listings.csv.gz&#39;</span>
@@ -11915,7 +11914,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[202]:</div>
+<div class="prompt output_prompt">Out[3]:</div>
 
 
 
@@ -12168,7 +12167,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[203]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">summarizeData</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -12255,7 +12254,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[204]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -12271,7 +12270,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[204]:</div>
+<div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -12464,7 +12463,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[205]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">listings.csv&#39;</span>
@@ -12482,7 +12481,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[205]:</div>
+<div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -12635,7 +12634,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[206]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">summarizeData</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -12692,7 +12691,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[207]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -12708,7 +12707,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[207]:</div>
+<div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -12870,7 +12869,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[208]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">reviews_detailed</span><span class="se">\\</span><span class="s1">reviews.csv.gz&#39;</span>
@@ -12888,7 +12887,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[208]:</div>
+<div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -12978,7 +12977,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[209]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">summarizeData</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -13029,7 +13028,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[210]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13045,7 +13044,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[210]:</div>
+<div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -13148,7 +13147,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[211]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">reviews.csv&#39;</span>
@@ -13166,7 +13165,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[211]:</div>
+<div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -13238,7 +13237,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[212]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">summarizeData</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -13289,7 +13288,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[213]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13305,7 +13304,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[213]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -13381,7 +13380,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[214]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">calendar_detailed</span><span class="se">\\</span><span class="s1">calendar.csv.gz&#39;</span>
@@ -13399,7 +13398,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[214]:</div>
+<div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -13489,7 +13488,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[215]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">summarizeData</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -13542,7 +13541,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[216]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13558,7 +13557,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[216]:</div>
+<div class="prompt output_prompt">Out[17]:</div>
 
 
 
@@ -13664,7 +13663,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[217]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">neighbourhoods.csv&#39;</span>
@@ -13682,7 +13681,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[217]:</div>
+<div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -13723,7 +13722,7 @@ Column Names by Type:
     <tr>
       <th>top</th>
       <td>Queens</td>
-      <td>Great Kills</td>
+      <td>Laurelton</td>
     </tr>
     <tr>
       <th>freq</th>
@@ -13743,7 +13742,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[218]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">summarizeData</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -13792,7 +13791,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[219]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -13808,7 +13807,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[219]:</div>
+<div class="prompt output_prompt">Out[20]:</div>
 
 
 
@@ -13884,7 +13883,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[220]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">folder</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">neighbourhoods.geojson&#39;</span>
@@ -13899,7 +13898,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[221]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
@@ -13915,7 +13914,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[221]:</div>
+<div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -13932,7 +13931,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[222]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span>
@@ -13948,7 +13947,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[222]:</div>
+<div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -13965,7 +13964,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[223]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;There are </span><span class="si">{:d}</span><span class="s2"> feature sets in the collection&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">])))</span>
@@ -14004,7 +14003,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[224]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># inspect first feature set</span>
@@ -14021,7 +14020,7 @@ Column Names by Type:
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[224]:</div>
+<div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -14057,7 +14056,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[225]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># all neighbourhood groups</span>
@@ -14079,7 +14078,7 @@ Column Names by Type:
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;Queens&#39;, &#39;Brooklyn&#39;, &#39;Staten Island&#39;, &#39;Bronx&#39;, &#39;Manhattan&#39;}
+<pre>{&#39;Bronx&#39;, &#39;Queens&#39;, &#39;Staten Island&#39;, &#39;Manhattan&#39;, &#39;Brooklyn&#39;}
 </pre>
 </div>
 </div>
@@ -14090,7 +14089,7 @@ Column Names by Type:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[226]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># all neighbourhoods by neighbourhood group</span>
@@ -14117,30 +14116,30 @@ Column Names by Type:
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
+ group: Bronx
+ neighbourhoods:50 
+
+[&#39;Allerton&#39;, &#39;City Island&#39;, &#39;Fordham&#39;, &#39;Belmont&#39;, &#39;Soundview&#39;, &#39;Baychester&#39;, &#39;Mott Haven&#39;, &#39;Bronxdale&#39;, &#39;City Island&#39;, &#39;Castle Hill&#39;, &#39;Claremont Village&#39;, &#39;Clason Point&#39;, &#39;Co-op City&#39;, &#39;Concourse&#39;, &#39;Concourse Village&#39;, &#39;Mount Eden&#39;, &#39;Country Club&#39;, &#39;Mount Hope&#39;, &#39;East Morrisania&#39;, &#39;Fieldston&#39;, &#39;Eastchester&#39;, &#39;Edenwald&#39;, &#39;Parkchester&#39;, &#39;Pelham Bay&#39;, &#39;Highbridge&#39;, &#39;Pelham Gardens&#39;, &#39;Hunts Point&#39;, &#39;Morris Park&#39;, &#39;Kingsbridge&#39;, &#39;Morrisania&#39;, &#39;Longwood&#39;, &#39;Norwood&#39;, &#39;Morris Heights&#39;, &#39;Melrose&#39;, &#39;Olinville&#39;, &#39;North Riverdale&#39;, &#39;Port Morris&#39;, &#39;Riverdale&#39;, &#39;Schuylerville&#39;, &#39;Spuyten Duyvil&#39;, &#39;Van Nest&#39;, &#39;Throgs Neck&#39;, &#39;Tremont&#39;, &#39;Unionport&#39;, &#39;University Heights&#39;, &#39;Wakefield&#39;, &#39;West Farms&#39;, &#39;Woodlawn&#39;, &#39;Westchester Square&#39;, &#39;Williamsbridge&#39;]
+
  group: Queens
  neighbourhoods:55 
 
 [&#39;Bayswater&#39;, &#39;Ditmars Steinway&#39;, &#39;Ozone Park&#39;, &#39;Whitestone&#39;, &#39;Arverne&#39;, &#39;Astoria&#39;, &#39;Bayside&#39;, &#39;Bay Terrace&#39;, &#39;Bayswater&#39;, &#39;Belle Harbor&#39;, &#39;Bellerose&#39;, &#39;Breezy Point&#39;, &#39;Briarwood&#39;, &#39;Cambria Heights&#39;, &#39;College Point&#39;, &#39;Corona&#39;, &#39;Jamaica Hills&#39;, &#39;Douglaston&#39;, &#39;Glen Oaks&#39;, &#39;East Elmhurst&#39;, &#39;Elmhurst&#39;, &#39;Edgemere&#39;, &#39;Glendale&#39;, &#39;Far Rockaway&#39;, &#39;Jamaica Estates&#39;, &#39;Laurelton&#39;, &#39;Flushing&#39;, &#39;Forest Hills&#39;, &#39;Fresh Meadows&#39;, &#39;Kew Gardens&#39;, &#39;Queens Village&#39;, &#39;Hollis&#39;, &#39;Hollis Hills&#39;, &#39;Holliswood&#39;, &#39;Howard Beach&#39;, &#39;Howard Beach&#39;, &#39;Jackson Heights&#39;, &#39;Jamaica&#39;, &#39;Kew Gardens Hills&#39;, &#39;Little Neck&#39;, &#39;Long Island City&#39;, &#39;Maspeth&#39;, &#39;Middle Village&#39;, &#39;Neponsit&#39;, &#39;Rego Park&#39;, &#39;Richmond Hill&#39;, &#39;Ridgewood&#39;, &#39;Rockaway Beach&#39;, &#39;Rosedale&#39;, &#39;South Ozone Park&#39;, &#39;Springfield Gardens&#39;, &#39;St. Albans&#39;, &#39;Sunnyside&#39;, &#39;Woodside&#39;, &#39;Woodhaven&#39;]
-
- group: Brooklyn
- neighbourhoods:48 
-
-[&#39;Bay Ridge&#39;, &#39;Gerritsen Beach&#39;, &#39;Bath Beach&#39;, &#39;Bedford-Stuyvesant&#39;, &#39;Bensonhurst&#39;, &#39;Bergen Beach&#39;, &#39;Boerum Hill&#39;, &#39;Borough Park&#39;, &#39;Brighton Beach&#39;, &#39;Prospect-Lefferts Gardens&#39;, &#39;Brooklyn Heights&#39;, &#39;Brownsville&#39;, &#39;Bushwick&#39;, &#39;Cypress Hills&#39;, &#39;Canarsie&#39;, &#39;Carroll Gardens&#39;, &#39;Clinton Hill&#39;, &#39;Cobble Hill&#39;, &#39;Crown Heights&#39;, &#39;Columbia St&#39;, &#39;Coney Island&#39;, &#39;DUMBO&#39;, &#39;Downtown Brooklyn&#39;, &#39;Dyker Heights&#39;, &#39;East Flatbush&#39;, &#39;East New York&#39;, &#39;Flatbush&#39;, &#39;Flatlands&#39;, &#39;Gowanus&#39;, &#39;Fort Greene&#39;, &#39;Fort Hamilton&#39;, &#39;Gravesend&#39;, &#39;Kensington&#39;, &#39;Greenpoint&#39;, &#39;Manhattan Beach&#39;, &#39;Midwood&#39;, &#39;Mill Basin&#39;, &#39;Navy Yard&#39;, &#39;Park Slope&#39;, &#39;Prospect Heights&#39;, &#39;Red Hook&#39;, &#39;Sea Gate&#39;, &#39;Sheepshead Bay&#39;, &#39;South Slope&#39;, &#39;Sunset Park&#39;, &#39;Vinegar Hill&#39;, &#39;Windsor Terrace&#39;, &#39;Williamsburg&#39;]
 
  group: Staten Island
  neighbourhoods:48 
 
 [&#39;Arden Heights&#39;, &#39;Arrochar&#39;, &#39;Port Ivory&#39;, &#39;Bay Terrace, Staten Island&#39;, &#39;Bloomfield&#39;, &#34;Bull&#39;s Head&#34;, &#39;Chelsea, Staten Island&#39;, &#39;Castleton Corners&#39;, &#39;Grant City&#39;, &#39;Charleston&#39;, &#39;Clifton&#39;, &#39;Concord&#39;, &#39;Dongan Hills&#39;, &#39;Eltingville&#39;, &#39;Emerson Hill&#39;, &#39;Shore Acres&#39;, &#39;Fort Wadsworth&#39;, &#39;Graniteville&#39;, &#39;Great Kills&#39;, &#39;Huguenot&#39;, &#39;Grymes Hill&#39;, &#39;Howland Hook&#39;, &#39;Lighthouse Hill&#39;, &#39;Oakwood&#39;, &#39;Pleasant Plains&#39;, &#39;Mariners Harbor&#39;, &#39;Midland Beach&#39;, &#39;New Brighton&#39;, &#39;New Dorp&#39;, &#39;New Dorp Beach&#39;, &#39;New Springville&#39;, &#39;Port Richmond&#39;, &#34;Prince&#39;s Bay&#34;, &#39;Randall Manor&#39;, &#39;Silver Lake&#39;, &#39;Woodrow&#39;, &#39;Richmondtown&#39;, &#39;Rosebank&#39;, &#39;Rossville&#39;, &#39;South Beach&#39;, &#39;Tompkinsville&#39;, &#39;St. George&#39;, &#39;Stapleton&#39;, &#39;Todt Hill&#39;, &#39;Tottenville&#39;, &#39;West Brighton&#39;, &#39;Westerleigh&#39;, &#39;Willowbrook&#39;]
 
- group: Bronx
- neighbourhoods:50 
-
-[&#39;Allerton&#39;, &#39;City Island&#39;, &#39;Fordham&#39;, &#39;Belmont&#39;, &#39;Soundview&#39;, &#39;Baychester&#39;, &#39;Mott Haven&#39;, &#39;Bronxdale&#39;, &#39;City Island&#39;, &#39;Castle Hill&#39;, &#39;Claremont Village&#39;, &#39;Clason Point&#39;, &#39;Co-op City&#39;, &#39;Concourse&#39;, &#39;Concourse Village&#39;, &#39;Mount Eden&#39;, &#39;Country Club&#39;, &#39;Mount Hope&#39;, &#39;East Morrisania&#39;, &#39;Fieldston&#39;, &#39;Eastchester&#39;, &#39;Edenwald&#39;, &#39;Parkchester&#39;, &#39;Pelham Bay&#39;, &#39;Highbridge&#39;, &#39;Pelham Gardens&#39;, &#39;Hunts Point&#39;, &#39;Morris Park&#39;, &#39;Kingsbridge&#39;, &#39;Morrisania&#39;, &#39;Longwood&#39;, &#39;Norwood&#39;, &#39;Morris Heights&#39;, &#39;Melrose&#39;, &#39;Olinville&#39;, &#39;North Riverdale&#39;, &#39;Port Morris&#39;, &#39;Riverdale&#39;, &#39;Schuylerville&#39;, &#39;Spuyten Duyvil&#39;, &#39;Van Nest&#39;, &#39;Throgs Neck&#39;, &#39;Tremont&#39;, &#39;Unionport&#39;, &#39;University Heights&#39;, &#39;Wakefield&#39;, &#39;West Farms&#39;, &#39;Woodlawn&#39;, &#39;Westchester Square&#39;, &#39;Williamsbridge&#39;]
-
  group: Manhattan
  neighbourhoods:32 
 
 [&#39;Battery Park City&#39;, &#39;Chinatown&#39;, &#39;Chelsea&#39;, &#39;Civic Center&#39;, &#39;East Harlem&#39;, &#39;East Village&#39;, &#39;Financial District&#39;, &#39;Flatiron District&#39;, &#39;Gramercy&#39;, &#39;Greenwich Village&#39;, &#39;Harlem&#39;, &#34;Hell&#39;s Kitchen&#34;, &#39;Inwood&#39;, &#39;Kips Bay&#39;, &#39;Little Italy&#39;, &#39;Murray Hill&#39;, &#39;Lower East Side&#39;, &#39;Marble Hill&#39;, &#39;Midtown&#39;, &#39;Morningside Heights&#39;, &#39;NoHo&#39;, &#39;Nolita&#39;, &#39;SoHo&#39;, &#39;Roosevelt Island&#39;, &#39;Stuyvesant Town&#39;, &#39;Theater District&#39;, &#39;Tribeca&#39;, &#39;Two Bridges&#39;, &#39;Upper East Side&#39;, &#39;Upper West Side&#39;, &#39;Washington Heights&#39;, &#39;West Village&#39;]
+
+ group: Brooklyn
+ neighbourhoods:48 
+
+[&#39;Bay Ridge&#39;, &#39;Gerritsen Beach&#39;, &#39;Bath Beach&#39;, &#39;Bedford-Stuyvesant&#39;, &#39;Bensonhurst&#39;, &#39;Bergen Beach&#39;, &#39;Boerum Hill&#39;, &#39;Borough Park&#39;, &#39;Brighton Beach&#39;, &#39;Prospect-Lefferts Gardens&#39;, &#39;Brooklyn Heights&#39;, &#39;Brownsville&#39;, &#39;Bushwick&#39;, &#39;Cypress Hills&#39;, &#39;Canarsie&#39;, &#39;Carroll Gardens&#39;, &#39;Clinton Hill&#39;, &#39;Cobble Hill&#39;, &#39;Crown Heights&#39;, &#39;Columbia St&#39;, &#39;Coney Island&#39;, &#39;DUMBO&#39;, &#39;Downtown Brooklyn&#39;, &#39;Dyker Heights&#39;, &#39;East Flatbush&#39;, &#39;East New York&#39;, &#39;Flatbush&#39;, &#39;Flatlands&#39;, &#39;Gowanus&#39;, &#39;Fort Greene&#39;, &#39;Fort Hamilton&#39;, &#39;Gravesend&#39;, &#39;Kensington&#39;, &#39;Greenpoint&#39;, &#39;Manhattan Beach&#39;, &#39;Midwood&#39;, &#39;Mill Basin&#39;, &#39;Navy Yard&#39;, &#39;Park Slope&#39;, &#39;Prospect Heights&#39;, &#39;Red Hook&#39;, &#39;Sea Gate&#39;, &#39;Sheepshead Bay&#39;, &#39;South Slope&#39;, &#39;Sunset Park&#39;, &#39;Vinegar Hill&#39;, &#39;Windsor Terrace&#39;, &#39;Williamsburg&#39;]
 </pre>
 </div>
 </div>
