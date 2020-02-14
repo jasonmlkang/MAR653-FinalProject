@@ -22,10 +22,9 @@ All files related to the project reside under `final_project` directory.
 
 ### Data
 
-https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data#AB_NYC_2019.csv
-Airbnb listings in New York City
-This public dataset is part of Airbnb, and the original source can be found on
-http://insideairbnb.com/get-the-data.html
+Data sources come from
+[Airbnb listings in New York City](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data#AB_NYC_2019.csv)
+(Kaggle) and [Inside Airbnb](http://insideairbnb.com/get-the-data.html).
 
 - listings.csv.gz (Detailed Listings data for New York City) Date compiled: 04
   December, 2019
@@ -50,16 +49,18 @@ All files related to homework 2 reside under `homework2` directory.
 
 You need to have Large file storage (lfs) installed on your computer in order
 to properly download all data (large files). Large file storage (lfs) allows
-checking-in large files so that code (i.e. notebook) and data can reside in the
-same repository. The lfs software and installation instructions can be found on
+checking-in/uploading large files on github so that code (i.e. notebook) and
+data can reside in the same repository. The lfs software and installation
+instructions can be found on
 [Git LFS download page](https://git-lfs.github.com/).
 
 # To Use This Repo
 
-To use this repository, you can simply login to [colab](https://colab.research.
-google.com/) and point it to this repository (as despited in figure below). Once colab
-gains access to this repository, it will scan for all notebooks (i.e. *.ipynb
-files) in this repository. You can click on the notebook that you want to edit.
+To use this repository, you can simply login to
+[colab](https://colab.research.google.com/) and point it to this repository (as
+despited in figure below). Once colab gains access to this repository, it will
+scan for all notebooks (i.e. *.ipynb files) in this repository. You can click on
+the notebook that you want to edit.
 
 ![Colab Login](/images/colab_login.png)
 
