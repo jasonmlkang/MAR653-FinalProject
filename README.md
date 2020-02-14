@@ -35,8 +35,9 @@ http://insideairbnb.com/get-the-data.html
   compiled: 04 December, 2019
 - listings.csv (Summary information and metrics for listings in New York City
   (good for visualisations)) Date compiled: 04 December, 2019
-- reviews.csv (Summary Review data and Listing ID (to facilitate time based analytics
-  and visualisations linked to a listing)) Date compiled: 04 December, 2019
+- reviews.csv (Summary Review data and Listing ID (to facilitate time based
+  analytics and visualisations linked to a listing)) Date compiled: 04 December,
+  2019
 - neighbourhoods.csv (Neighbourhood list for geo filter. Sourced from city or
   open source GIS files)
 - neighbourhoods.geojson (GeoJSON file of neighbourhoods of the city)
@@ -45,14 +46,20 @@ http://insideairbnb.com/get-the-data.html
 
 All files related to homework 2 reside under `homework2` directory.
 
-# How To Use This Repo
+# To Clone/Download This Repo
 
+You need to have Large file storage (lfs) installed on your computer in order
+to properly download all data (large files). Large file storage (lfs) allows
+checking-in large files so that code (i.e. notebook) and data can reside in the
+same repository. The lfs software and installation instructions can be found on
+[Git LFS download page](https://git-lfs.github.com/).
 
+# To Use This Repo
 
-### Github Large File Storage (lfs)
+To use this repository, you can simply login to [colab](https://colab.research.google.com/)
+and point it to this repository. Once colab gains access to this repository, it
+will scan for all notebooks (i.e. *.ipynb files) in this repository. You can
+click on the notebook that you want to edit.
 
-Large file storage (lfs) allows checking-in large files so that code (i.e.
-notebook) and data can reside in the same repository. To use lfs, you need to
-have lfs installed on your local computer. The lfs software and installation
-instructions can be found on [Git LFS download page](https://git-lfs.github.com/).
-
+If you want to save your edits back to this github repo, you have to click
+File --> Save a copy in GitHub.
