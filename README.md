@@ -16,7 +16,7 @@ analysis/deliverables.
 
 - Winter 2020
 
-# Project
+# Final Project
 
 All files related to the project reside under `final_project` directory.
 
@@ -56,10 +56,12 @@ same repository. The lfs software and installation instructions can be found on
 
 # To Use This Repo
 
-To use this repository, you can simply login to [colab](https://colab.research.google.com/)
-and point it to this repository. Once colab gains access to this repository, it
-will scan for all notebooks (i.e. *.ipynb files) in this repository. You can
-click on the notebook that you want to edit.
+To use this repository, you can simply login to [colab](https://colab.research.
+google.com/) and point it to this repository (as despited in Fig 1). Once colab
+gains access to this repository, it will scan for all notebooks (i.e. *.ipynb
+files) in this repository. You can click on the notebook that you want to edit.
 
-If you want to save your edits back to this github repo, you have to click
+![Colab Login](/images/colab_login.png)
+
+If you want to save your edits back to this github repository, you have to click
 File --> Save a copy in GitHub.
