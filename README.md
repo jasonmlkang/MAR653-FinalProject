@@ -24,7 +24,7 @@ All files related to the project reside under `final_project` directory.
 
 Data sources come from
 [Airbnb listings in New York City](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data#AB_NYC_2019.csv)
-(Kaggle) and [Inside Airbnb](http://insideairbnb.com/get-the-data.html).
+(kaggle.com) and [Inside Airbnb](http://insideairbnb.com/get-the-data.html) (insideairbnb.com).
 
 - listings.csv.gz (Detailed Listings data for New York City) Date compiled: 04
   December, 2019
