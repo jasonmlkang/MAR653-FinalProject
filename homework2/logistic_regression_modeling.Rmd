@@ -43,7 +43,9 @@ exp(coef(mod)) # converted log-odds to odds
 ```
 
 Significant drivers of retention in plain odds: 
+
 * the coefficient on esent (0.184) was 1.202, suggesting that for each unit increase in the number of emails sent to customer, the odds of retention increases by 1.2:1 or about 20%.
+
 * the coefficient on paperless (0.494) was 1.64, suggesting that paperless subscriptions increases the odds of retention by 1.64:1 or about 64%.
 
 ## Confidence Interval in Plain Odds
