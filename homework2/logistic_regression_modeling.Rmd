@@ -82,3 +82,21 @@ acc <- round(sum(diag(cmat)) / sum(cmat),2)
 ```
 
 Accuracy of predictions made on test set measured at: `r acc`
+
+## Precision and Recall
+
+```{r}
+prec_1 <- 4476 / (4476 + 454)
+rec_1 <- 4476 / (4476 + 650)
+prec_0 <- 4703 / (4703 + 650)
+rec_0 <- 4703 / (4703 + 454)
+f_1 <- (2*prec_1*rec_1) / (prec_1 + rec_1)
+f_0 <- (2*prec_0*rec_0) / (prec_0 + rec_0)
+```
+
+* Precision class=1: `r prec_1`
+* Recall class=1: `r rec_1`
+* Precision class=0: `r prec_0`
+* Recall class=0: `r rec_0`
+* f-measure class=1: `r f_1`
+* f_measure class=0: `r f_0`

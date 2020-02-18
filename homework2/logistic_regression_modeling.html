@@ -332,6 +332,23 @@ preds &lt;- ifelse(preds &gt; 0.5, 1, 0)</code></pre>
 acc &lt;- round(sum(diag(cmat)) / sum(cmat),2)</code></pre>
 <p>Accuracy of predictions made on test set measured at: 0.89</p>
 </div>
+<div id="precision-and-recall" class="section level2">
+<h2>Precision and Recall</h2>
+<pre class="r"><code>prec_1 &lt;- 4476 / (4476 + 454)
+rec_1 &lt;- 4476 / (4476 + 650)
+prec_0 &lt;- 4703 / (4703 + 650)
+rec_0 &lt;- 4703 / (4703 + 454)
+f_1 &lt;- (2*prec_1*rec_1) / (prec_1 + rec_1)
+f_0 &lt;- (2*prec_0*rec_0) / (prec_0 + rec_0)</code></pre>
+<ul>
+<li>Precision class=1: 0.9079108</li>
+<li>Recall class=1: 0.8731955</li>
+<li>Precision class=0: 0.8785728</li>
+<li>Recall class=0: 0.9119643</li>
+<li>f-measure class=1: 0.8902148</li>
+<li>f_measure class=0: 0.8949572</li>
+</ul>
+</div>
 
 
 
