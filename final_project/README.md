@@ -25,10 +25,9 @@ presentation in class, and a team peer evaluation.
 Feel free to review past projects (these will be posted) for some examples.
 Some past research questions used have been:
 
-1. RevenueofapropertyonAirbnbusingtheavailabledata?
-1. Howdoesreviewsentimentaffectaproperty’spotentialtoberentedonAirbnb?
-1. WhatarethedriversofAirbnbpropertyrevenuesinMiamiandParis?
-1. HowwouldyouoptimizeAirbnbpropertyrevenuesinMiamiandParis?Areyour
-
-strategies different or the same in these cities?
+1. Revenue of a property on Airbnb using the available data?
+1. How does review sentiment affect a property’s potential to be rented on Airbnb?
+1. What are the drivers of Airbnb property revenues in Miami and Paris?
+1. How would you optimize Airbnb property revenues in Miami and Paris? Are your
+   strategies different or the same in these cities?
 
