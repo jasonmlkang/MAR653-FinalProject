@@ -58,13 +58,13 @@ instructions can be found on
 
 To use this repository, you can simply login to
 [colab](https://colab.research.google.com/) and point it to this repository (as
-despited in figure below). Once colab gains access to this repository, it will
+depicted in figure below). Once colab gains access to this repository, it will
 scan for all notebooks (i.e. *.ipynb files) in this repository. You can click on
 the notebook that you want to edit.
 
 ![Colab Login](/images/colab_login.png)
 
 If you want to save your edits back to this github repository, you have to click
-File --> Save a copy in GitHub (as depited in figure below).
+File --> Save a copy in GitHub (as depicted in figure below).
 
 ![Colab Save](/images/colab_save.png)
