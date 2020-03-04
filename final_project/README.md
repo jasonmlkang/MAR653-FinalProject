@@ -11,10 +11,10 @@ The project report should contain the following:
 
 Use the above as appropriate headings for each section of the **paper**.
 
-You will present your project results during the week 10 live session. Your
-presentation deck will also be your project report. You can submit additional
+You will present your project results during the week 10 live session. **Your
+presentation deck will also be your project report**. You can submit additional
 appendices with the presentation deck as part of your project report. I will,
-however, place more importance on the presentation deck when evaluating the
+however, **place more importance on the presentation deck** when evaluating the
 report.
 
 ## Project Evaluation
