@@ -1,0 +1,249 @@
+---
+title: "Final Project: Visualizations"
+author: "Thomas Bahng"
+date: "March 9, 2020"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+library(data.table)
+library(ggplot2)
+library(knitr)
+library(dplyr)
+library(viridis)
+library(purrr)
+library(reshape2)
+opts_chunk$set(echo = TRUE)
+```
+
+* This file creates some visualizations to support modeling and presentation.
+
+# Plot Trends in Listings and Price Over Time
+* Annual listing data for New York City was collected from [insideairbnb](http://insideairbnb.com/get-the-data.html) on March 9, 2020.
+* Each of the five files are exclusive listings datasets from 2015 - 2019
+
+### Read Yearly Listing Summary Data
+* December (year-end) listings data collected for each year from 2015-2019.
+
+```{r}
+# read yearly listing summary data
+fnames = list.files('data', pattern = 'listings_201\\d12.csv', full.names = TRUE)
+df_list = lapply(
+  fnames,
+  function(x) fread(x)
+)
+# name each data set
+names(df_list) <- 2015:2019
+# dimensions of each data set
+sapply(df_list, dim)
+```
+
+### Plot: Growth in Listings Over Time
+
+```{r}
+df <- map_df(df_list, ~as.data.frame(.x), .id="year")
+dfplot <- df %>% count(year, neighbourhood_group)
+head(dfplot) %>% kable(., row.names = FALSE)
+```
+
+```{r}
+nycGrowth <- data.frame(
+  year = 2016:2019,
+  perc_growth = round(diff(tapply(dfplot$n, dfplot$year, sum)) / tapply(dfplot$n, dfplot$year, sum)[1:4],2)
+)
+```
+
+```{r}
+ggplot(nycGrowth, aes( x = year, y = perc_growth )) +
+  geom_point() + geom_line() +
+  ylab("percent change in listings") +
+  ggtitle("Rate of Change in Number of Listings in NYC (2015 - 2019)")
+```
+
+*The growth rate in AirBnb listings in NYC has significantly decreased from 2015 - 2019.*
+
+```{r}
+ggplot(dfplot, aes(x = year, y = n, fill = neighbourhood_group)) +
+  geom_col() +
+  scale_fill_viridis(discrete = TRUE) +
+  ylab("Count of Listings") +
+  ggtitle("Total Number of AirBnb Listings in NYC by Year",
+          subtitle = "Segmented by Neighbourhood Group")
+```
+
+*Overall trend shows an increase in listings, with the majority share of listings in Brooklyn and Manhattan.*
+
+```{r}
+# listings growth rate by neighbourhood
+ngroups <- c('Bronx','Brooklyn','Manhattan','Queens','Staten Island')
+# function to get YoY growth rate given neighbourhood group
+getGrowth <- function(x) {
+  d <- dfplot[dfplot$neighbourhood_group == x,]
+  arr <- tapply(d$n, d$year, sum)
+  out <- round(diff(arr)/arr[1:length(arr)-1], 2)
+  return(out)
+}
+# dataframe of YoY change
+dYearDelta <- as.data.frame(sapply(ngroups, getGrowth) %>% t)
+dYearDelta$neighbour_group <- ngroups
+dYearDelta <- dYearDelta[,c('neighbour_group','2016','2017','2018','2019')]
+dYearDelta %>% 
+  kable(., caption = "Year-over-Year Rate of Change in Listings by Neighbourhood Group",
+        row.names = FALSE)
+```
+
+```{r}
+ggplot(melt(dYearDelta), aes(x = neighbour_group, y = variable, fill = value)) +
+  geom_tile() +
+  scale_fill_viridis() +
+  ggtitle("Year-over-Year Growth in Listings by Neighbourhood Group")
+```
+
+*Average annual growth across all NYC neighbourhood groups was `r mean(as.matrix(dYearDelta[,-1]))`. The neighbourhoods with the strongest growth year-over-year were Bronx, Queens, and Staten Island.*
+
+### Plot: Distribution of Log Listing Price Over Time
+
+```{r}
+dfplot2 <- df[,c('year', 'price')]
+dfplot2$year <- as.factor(dfplot2$year)
+# log transform price
+dfplot2$logprice <- log(dfplot2$price)
+ggplot(dfplot2, aes(y = logprice, factor(year), fill = year)) +
+  geom_boxplot() +
+  scale_fill_viridis(discrete = TRUE) +
+  xlab('year') +
+  ylab('log of listing price') +
+  ggtitle("Log Listing Price by Year")
+```
+
+*Prices haven't changed too much year-over-year. The average listing price across all listings stayed relatively stable around `r round(mean(dfplot2$price),2)`.*
+
+### Plot: Distribution of Listing Price Over Time by Neighbourhood Group
+
+```{r}
+dfplot3 <- df[,c('year', 'neighbourhood_group', 'price')]
+dfplot3$year <- as.factor(dfplot3$year)
+# log transform price
+dfplot3$logprice <- log(dfplot3$price)
+ggplot(dfplot3, aes(y = logprice, factor(year), fill = year)) +
+  geom_boxplot(color = 'white') +
+  scale_fill_viridis(discrete = TRUE) +
+  xlab('year') +
+  theme_dark() +
+  ylab('log of listing price') +
+  facet_wrap(~neighbourhood_group) +
+  ggtitle("Log Listing Price by Year",
+          subtitle = "Facets Neighbourhood Group")
+```
+
+*Again, prices appeared to have remained stable over the years even by neighbourhood group.*
+
+# Visualization of Key Variables for Modeling
+
+```{r}
+# cleaned listings data for 2019, including census attributes
+df <- fread('data/listings_cleaned.csv')
+```
+
+### Plot: How Does Review Data Affect Price?
+
+```{r}
+keep_cols <- c(names(df)[grepl(pattern = 'review', names(df))], 'price')
+dfplot <- as.data.frame(df) %>% .[, keep_cols] %>%
+  .[, sapply(., is.numeric)] %>% .[complete.cases(.),]
+dfplot <- melt(cor(dfplot))
+```
+
+```{r}
+dfplot[dfplot$Var1 == 'price',] %>%
+  kable(., caption = "Correlation of Review Variables to Price", row.names = FALSE)
+```
+
+```{r}
+ggplot(dfplot, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  ggtitle("Correlation Matrix of Review Variables and Price")
+```
+
+*Price is not highly correlated with any of the review variables.It probably means that hosts aren't setting prices based on what people are saying about the rentals and pricing is more influenced by market forces/other factors.*
+
+### Plot: How Does Neighborhood-Based Census Data Correlate with Price?
+
+```{r}
+keep_cols <- c(
+  'population','population_density','housing_units','occupied_housing_units',
+  'median_home_value','median_household_income','price'
+)
+dfplot <- as.data.frame(df) %>% .[, keep_cols] %>%
+  .[, sapply(., is.numeric)] %>% .[complete.cases(.),]
+dfplot <- melt(cor(dfplot))
+```
+
+```{r}
+dfplot[dfplot$Var1 == 'price',] %>%
+  kable(., caption = "Correlation of Census Variables to Price", row.names = FALSE)
+```
+
+```{r}
+ggplot(dfplot, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  ggtitle("Correlation Matrix of Census Variables and Price")
+```
+
+*Price isn't highly correlated with Census attributes. However, as expected there is some moderate correlation between price, home value, and household income.*
+
+### Plot: How Does Neighbourhood Persona (PRIZM Attributes)  Relate with Price?
+
+```{r}
+# discretize price into 5 equal frequency bins
+df$priceDisc <- arules::discretize(df$price, method = 'frequency', categories = 5)
+```
+
+```{r}
+dat <- as.data.frame(df)
+# remove prizm_cluster = 'UNK' (unknown)
+dat <- dat[!dat$prizm_cluster == 'UNK',]
+# keep just the top prizm clusters that make up 80% of the data
+clust_freq <- sort(table(dat$prizm_cluster), decreasing = TRUE)
+clust_keep <- clust_freq[which(cumsum(clust_freq) <= 0.8 * sum(clust_freq))] %>% names
+dat <- dat[dat$prizm_cluster %in% clust_keep,]
+# normalize the prizm features for each cluster
+# function to normalize vector
+normPrizm <- function(x) {
+  paste(
+    unique(
+      do.call('c', strsplit(gsub("\\[|\\]|[\"']",'',x), split = ', '))
+    ), collapse = ' | '
+  )
+}
+for (i in clust_keep) {
+  dat$prizm_features_norm[dat$prizm_cluster == i] <- normPrizm(
+    dat$prizm_features[dat$prizm_cluster == i]
+  )
+}
+# contingency table of clusters and discretized price
+dfPlot <- table(dat[,'prizm_cluster'], dat[,'priceDisc']) %>% as.data.frame
+# reorder cluster factor levels
+dfPlot$Var1 <- factor(dfPlot$Var1, levels = clust_keep)
+# scale frequency relative to cluster
+for (i in clust_keep) {
+  dfPlot$Freq[dfPlot$Var1 == i] <- scale(dfPlot$Freq[dfPlot$Var1 == i])
+}
+
+```
+
+```{r}
+ggplot(dfPlot, aes(Var1, Var2)) + 
+  geom_point(size = 10, aes(color = Freq)) + 
+  scale_color_viridis() +
+  xlab("Cluster Label") + ylab("Price Bins") +
+  ggtitle("Contingency Plot of Discretized Price and Top 14 Neighbourhood Personas")
+```
+
+Takeaways:
+* 
