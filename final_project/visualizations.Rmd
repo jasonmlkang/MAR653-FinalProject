@@ -258,8 +258,150 @@ kable(dfClustDesc, row.names = FALSE)
 
 Takeaways:
 
-* Neighbourhood personas that generally price their listings lower are:
+* *Neighbourhood personas that generally price their listings lower are:*
     * Low-Rise Living | Urban Elders | Aspiring A-Listers | City Roots | Multi-Culti Mosaic | Connected Bohemians | Multi-Culti Families | Urban Modern Mix
-* Neighbourhood personas that generally price their listings higher, but to a lesser proportion include:
+* *Neighbourhood personas that generally price their listings higher, but to a lesser proportion include:*
     * Young Digerati | Urban Elders | Connected Bohemians | Money & Brains | The Cosmopolitans | Aspiring A-Listers
   
+  
+# Visualization for Other Exploratory Analysis
+
+### How does the number of listings by host relate to price; Segmented by Neighbourhood Group
+
+```{r}
+df$logprice <- log(df$price)
+dfplot <- df[,c('logprice','host_listings_count','neighbourhood_group_cleansed')]
+colnames(dfplot) <- c('logprice','host_listings_count','neighbourhood_grp')
+
+ggplot(dfplot, aes(x = host_listings_count, y = logprice, color = neighbourhood_grp)) +
+  facet_wrap(~neighbourhood_grp, scales = 'free_x') +
+  geom_point() +
+  ggtitle("Host Listings Count vs. Log Price")
+```
+
+*Hosts that list many units on AirBnb generally tend to price more modestly than hosts with fewer listings to their name. This is most clearly seen in Manhattan and Queens by the funnel-shaped visualizations. It is not always the case as seen in the lower-tier neighbourhoods. Here very few hosts have many listings, the market is not as saturated and the costs of doing business are not as high.*
+
+### Map of NYC showing prices and Census information by location
+
+```{r}
+# transform data for plot
+# get latitude and longitude coordinates from original data
+keep_cols <- c(
+  'id','state','price','population','median_home_value',
+  'median_household_income','neighbourhood_group_cleansed'
+)
+# listings_cleaned
+df <- as.data.frame(df)[,keep_cols] 
+# original 2019 listings summary
+df2 <- as.data.frame(df_list[[5]])[,c('id','latitude','longitude')]  
+dfplot <- merge(df, df2, by = 'id') %>% .[complete.cases(.),]
+# filter on just state == 'NY'
+dfplot <- dfplot[dfplot$state == 'NY',]
+# change 'NY' to 'new york'
+dfplot$state <- 'new york'
+```
+
+```{r}
+# specify latitude longitude coordinate limits
+xlim.min = min(dfplot$longitude)
+xlim.max = max(dfplot$longitude)
+ylim.min = min(dfplot$latitude)
+ylim.max = max(dfplot$latitude)
+```
+
+```{r}
+# specify state map data
+us <- map_data('state')
+```
+
+### Density of Listings
+
+```{r}
+# Density of listings
+ggplot(dfplot, aes(map_id = state, x = longitude, y = latitude)) +
+  geom_map(map = us, fill = 'black', color = 'white') +
+  expand_limits(x = us$long, y = us$lat) +
+  coord_map() +
+  scale_color_viridis() +
+  theme_bw() +
+  stat_density2d(aes(color = ..level..)) +
+  xlim(xlim.min, xlim.max) + ylim(ylim.min, ylim.max) +
+  ggtitle("Density of Listings in New York")
+```
+
+*Most listings are densely clustered in Manhattan and Brooklyn*
+
+### Median Household Income by zipcode
+
+```{r}
+# median household income by Zipcode
+ggplot(dfplot, aes(map_id = state)) +
+  geom_map(map = us, fill = 'black', color = 'white') +
+  expand_limits(x = us$long, y = us$lat) +
+  coord_map() +
+  geom_point(aes(x = longitude, y = latitude, col = median_household_income)) +
+  scale_color_viridis() +
+  theme_bw() +
+  xlim(xlim.min, xlim.max) + ylim(ylim.min, ylim.max) +
+  ggtitle("Median Income by Zipcode in New York")
+```
+
+*Manhattan has the highest median household income, followed by north Brooklyn. Median incomes range between 130,000 to 200,000+. The other surrounding regions such as Staten Island, Bronx, and Queens are lower between 50,000 to 100,000.*
+
+### Median Home Value by zipcode
+
+```{r}
+# median home value income by Zipcode
+ggplot(dfplot, aes(map_id = state)) +
+  geom_map(map = us, fill = 'black', color = 'white') +
+  expand_limits(x = us$long, y = us$lat) +
+  coord_map() +
+  geom_point(aes(x = longitude, y = latitude, col = median_home_value)) +
+  scale_color_viridis() +
+  theme_bw() +
+  xlim(xlim.min, xlim.max) + ylim(ylim.min, ylim.max) +
+  ggtitle("Median Home Value by Zipcode in New York")
+```
+
+*The median home value ranges between 500,000 and 1,000,000 in the vicinities of Manhattan, Brooklyn, and Queens. Most zipcodes exhibit median home values above 500,000 with a lower bound of about 300,000. The listings in Manhattan are those in areas of high home values. Many of listings in Brooklyn are in areas with relatively lower home values.*
+
+### Population by zipcode
+
+```{r}
+# population income by Zipcode
+ggplot(dfplot, aes(map_id = state)) +
+  geom_map(map = us, fill = 'black', color = 'white') +
+  expand_limits(x = us$long, y = us$lat) +
+  coord_map() +
+  geom_point(aes(x = longitude, y = latitude, col = population)) +
+  scale_color_viridis() +
+  theme_bw() +
+  xlim(xlim.min, xlim.max) + ylim(ylim.min, ylim.max) +
+  ggtitle("Population by Zipcode in New York")
+```
+
+*The plot shows that most people live in the vicinities surrounding Manhattan, particular in Queens, Brooklyn, Bronx, and Staten Island. Therefore, listings in Brooklyn and Queens are situated in zipcodes where most people reside, despite most of the listings being located in Manhattan, a place with high employment density.*
+
+### Price by Listings New York Greater than 99th Percentile of Price
+
+```{r}
+# specify latitude longitude coordinate limits
+lb = 800 # lower bound
+criteria = dfplot$price > lb
+xlim.min = min(dfplot$longitude[criteria])
+xlim.max = max(dfplot$longitude[criteria])
+ylim.min = min(dfplot$latitude[criteria])
+ylim.max = max(dfplot$latitude[criteria])
+# Listing prices in New York
+ggplot(dfplot[criteria,], aes(map_id = state)) +
+  geom_map(map = us, fill = 'black', color = 'white') +
+  expand_limits(x = us$long, y = us$lat) +
+  coord_map() +
+  geom_point(aes(x = longitude, y = latitude, col = price)) +
+  scale_color_viridis() +
+  theme_bw() +
+  xlim(xlim.min, xlim.max) + ylim(ylim.min, ylim.max) +
+  ggtitle(paste("Listing prices in New York Greater than", lb))
+```
+
+*Most of the very high priced listings (i.e. greater than 99th percentile) are in Manhattan and possibly north Brooklyn. The vast majority of listings are priced under 200.*
