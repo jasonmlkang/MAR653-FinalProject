@@ -245,5 +245,21 @@ ggplot(dfPlot, aes(Var1, Var2)) +
   ggtitle("Contingency Plot of Discretized Price and Top 14 Neighbourhood Personas")
 ```
 
+```{r}
+desc = sapply(clust_keep, function(x) unique(dat$prizm_features_norm[dat$prizm_cluster == x]))
+
+dfClustDesc <- data.frame(
+  cluster = clust_keep,
+  description = desc
+)
+# table of cluster definitions
+kable(dfClustDesc, row.names = FALSE)
+```
+
 Takeaways:
-* 
+
+* Neighbourhood personas that generally price their listings lower are:
+    * Low-Rise Living | Urban Elders | Aspiring A-Listers | City Roots | Multi-Culti Mosaic | Connected Bohemians | Multi-Culti Families | Urban Modern Mix
+* Neighbourhood personas that generally price their listings higher, but to a lesser proportion include:
+    * Young Digerati | Urban Elders | Connected Bohemians | Money & Brains | The Cosmopolitans | Aspiring A-Listers
+  
