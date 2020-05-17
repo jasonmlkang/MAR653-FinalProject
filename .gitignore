@@ -2,8 +2,4 @@
 .Rhistory
 .RData
 .Ruserdata
-final_project/data/calendar_detailed/calendar.csv.gz
-*.csv
-*.gz
-*.geojson
 .DS_Store
